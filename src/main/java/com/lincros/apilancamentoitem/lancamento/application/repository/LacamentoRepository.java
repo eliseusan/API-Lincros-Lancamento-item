@@ -11,4 +11,6 @@ public interface LacamentoRepository {
     Lacamento buscaLacamentoPorOId(UUID oidLacamento);
 
     List<Lacamento> buscaTodosLancamentos();
+
+    void deletaLacamento(Lacamento lacamento);
 }

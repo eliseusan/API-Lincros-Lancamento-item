@@ -45,4 +45,11 @@ public class LacamentoApplicationService implements LacamentoService {
         return LacamentoListResponse.converte(lacamentos);
     }
 
+    @Override
+    public void deletaLacamentoPorOId(UUID oidLacamento) {
+        log.info("[start] LacamentoApplicationService - deletaLacamentoPorOId");
+        Lacamento lacamento = lacamentoRepository.buscaLacamentoPorOId(oidLacamento);
+        lacamentoRepository.deletaLacamento(lacamento);
+        log.info("[finish] LacamentoApplicationService - deletaLacamentoPorOId");
+    }
 }

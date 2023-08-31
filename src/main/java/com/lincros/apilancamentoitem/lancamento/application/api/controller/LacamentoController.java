@@ -29,7 +29,7 @@ public class LacamentoController implements LancamentoAPi {
     @Override
     public LacamentoDetalhadoListResponse buscaLacamentoPorId(UUID oidLacamento) {
         log.info("[start] LacamentoController - buscaLacamentoPorId");
-        log.info("[idProduto] {}", oidLacamento);
+        log.info("[oidLacamento] {}", oidLacamento);
         var lacamentoPorId = lacamentoService.buscaLacamentoPorOId(oidLacamento);
         log.info("[finish] LacamentoController - buscaLacamentoPorId");
         return lacamentoPorId;
@@ -41,5 +41,13 @@ public class LacamentoController implements LancamentoAPi {
         var listaDeLancamentos = lacamentoService.buscaTodosLancamentos();
         log.info("[finish] LacamentoController - buscaTodosLacamentos");
         return listaDeLancamentos;
+    }
+
+    @Override
+    public void deletaLacamentoPorOId(UUID oidLacamento) {
+        log.info("[start] LacamentoController - deletaLacamentoPorOId");
+        log.info("[oidLacamento] {}", oidLacamento);
+        lacamentoService.deletaLacamentoPorOId(oidLacamento);
+        log.info("[finish] LacamentoController - deletaLacamentoPorOId");
     }
 }

@@ -14,4 +14,6 @@ public interface LacamentoService {
     LacamentoDetalhadoListResponse buscaLacamentoPorOId(UUID oidLacamento);
 
     List<LacamentoListResponse> buscaTodosLancamentos();
+
+    void deletaLacamentoPorOId(UUID oidLacamento);
 }

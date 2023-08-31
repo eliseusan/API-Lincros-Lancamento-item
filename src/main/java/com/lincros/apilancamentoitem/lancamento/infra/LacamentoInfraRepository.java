@@ -28,18 +28,25 @@ public class LacamentoInfraRepository implements LacamentoRepository {
 
     @Override
     public Lacamento buscaLacamentoPorOId(UUID oidLacamento) {
-        log.info("[start] ProdutoInfraRepository - buscaProdutoPorId ");
+        log.info("[start] LacamentoInfraRepository - buscaLacamentoPorOId ");
         var lacamentoPorOId = lacamentoSpringDataJPARepository.findById(oidLacamento)
-                .orElseThrow(() -> APIException.build(HttpStatus.BAD_REQUEST, "PRODUTO NÃO ENCONTRADO!"));
-        log.info("[finish] ProdutoInfraRepository - buscaProdutoPorId ");
+                .orElseThrow(() -> APIException.build(HttpStatus.BAD_REQUEST, "LAÇAMENTO NÃO ENCONTRADO!"));
+        log.info("[finish] LacamentoInfraRepository - buscaLacamentoPorOId ");
         return lacamentoPorOId;
     }
 
     @Override
     public List<Lacamento> buscaTodosLancamentos() {
-        log.info("[start] ProdutoInfraRepository - buscaTodosProdutos ");
+        log.info("[start] LacamentoInfraRepository - buscaTodosLancamentos ");
         var lacamentos = lacamentoSpringDataJPARepository.findAll();
-        log.info("[finish] ProdutoInfraRepository - buscaTodosProdutos ");
+        log.info("[finish] LacamentoInfraRepository - buscaTodosLancamentos ");
         return lacamentos;
+    }
+
+    @Override
+    public void deletaLacamento(Lacamento lacamento) {
+        log.info("[start] LacamentoInfraRepository - deletaLacamento ");
+        lacamentoSpringDataJPARepository.delete(lacamento);
+        log.info("[finish] LacamentoInfraRepository - deletaLacamento ");
     }
 }

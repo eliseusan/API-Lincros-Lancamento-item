@@ -25,4 +25,8 @@ public interface LancamentoAPi {
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
     List<LacamentoListResponse> buscaTodosLacamentos();
+
+    @DeleteMapping(value = "/{oidLacamento}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deletaLacamentoPorOId(@PathVariable UUID oidLacamento);
 }
