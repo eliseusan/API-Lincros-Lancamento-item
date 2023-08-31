@@ -1,4 +1,4 @@
-package com.lincros.apilancamentoitem.lancamento.application.api.controller.requests;
+package com.lincros.apilancamentoitem.lancamento.application.api.requests;
 
 import lombok.Value;
 

@@ -1,4 +1,4 @@
-package com.lincros.apilancamentoitem.lancamento.application.api.controller.responses;
+package com.lincros.apilancamentoitem.lancamento.application.api.responses;
 
 import lombok.Builder;
 import lombok.Value;

@@ -1,10 +1,10 @@
 package com.lincros.apilancamentoitem.lancamento.application.api.controller;
 
-import com.lincros.apilancamentoitem.lancamento.application.api.controller.requests.LacamentoAlteracaoRequest;
-import com.lincros.apilancamentoitem.lancamento.application.api.controller.requests.LacamentoRequest;
-import com.lincros.apilancamentoitem.lancamento.application.api.controller.responses.LacamentoDetalhadoListResponse;
-import com.lincros.apilancamentoitem.lancamento.application.api.controller.responses.LacamentoListResponse;
-import com.lincros.apilancamentoitem.lancamento.application.api.controller.responses.LacamentoResponse;
+import com.lincros.apilancamentoitem.lancamento.application.api.requests.LacamentoAlteracaoRequest;
+import com.lincros.apilancamentoitem.lancamento.application.api.requests.LacamentoRequest;
+import com.lincros.apilancamentoitem.lancamento.application.api.responses.LacamentoDetalhadoListResponse;
+import com.lincros.apilancamentoitem.lancamento.application.api.responses.LacamentoListResponse;
+import com.lincros.apilancamentoitem.lancamento.application.api.responses.LacamentoResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

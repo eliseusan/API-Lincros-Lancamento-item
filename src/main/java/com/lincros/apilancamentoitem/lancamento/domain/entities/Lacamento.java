@@ -1,8 +1,8 @@
 package com.lincros.apilancamentoitem.lancamento.domain.entities;
 
 
-import com.lincros.apilancamentoitem.lancamento.application.api.controller.requests.LacamentoAlteracaoRequest;
-import com.lincros.apilancamentoitem.lancamento.application.api.controller.requests.LacamentoRequest;
+import com.lincros.apilancamentoitem.lancamento.application.api.requests.LacamentoAlteracaoRequest;
+import com.lincros.apilancamentoitem.lancamento.application.api.requests.LacamentoRequest;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
