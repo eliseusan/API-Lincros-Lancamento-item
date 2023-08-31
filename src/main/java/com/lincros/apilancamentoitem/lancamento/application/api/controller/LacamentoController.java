@@ -1,11 +1,14 @@
 package com.lincros.apilancamentoitem.lancamento.application.api.controller;
 
 import com.lincros.apilancamentoitem.lancamento.application.api.controller.requests.LacamentoRequest;
+import com.lincros.apilancamentoitem.lancamento.application.api.controller.responses.LacamentoDetalhadoListResponse;
 import com.lincros.apilancamentoitem.lancamento.application.api.controller.responses.LacamentoResponse;
 import com.lincros.apilancamentoitem.lancamento.application.service.LacamentoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.UUID;
 
 @Log4j2
 @RestController
@@ -19,5 +22,14 @@ public class LacamentoController implements LancamentoAPi {
         var lacamento = lacamentoService.criaLacamento(lacamentoRequest);
         log.info("[finish] LacamentoController - salvaLancamento");
         return lacamento;
+    }
+
+    @Override
+    public LacamentoDetalhadoListResponse buscaLacamentoPorId(UUID oidLacamento) {
+        log.info("[start] LacamentoController - buscaLacamentoPorId");
+        log.info("[idProduto] {}", oidLacamento);
+        var lacamentoPorId = lacamentoService.buscaLacamentoPorOId(oidLacamento);
+        log.info("[finish] LacamentoController - buscaLacamentoPorId");
+        return lacamentoPorId;
     }
 }
