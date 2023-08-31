@@ -8,6 +8,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.UUID;
 
 @Repository
@@ -32,5 +33,13 @@ public class LacamentoInfraRepository implements LacamentoRepository {
                 .orElseThrow(() -> APIException.build(HttpStatus.BAD_REQUEST, "PRODUTO NÃO ENCONTRADO!"));
         log.info("[finish] ProdutoInfraRepository - buscaProdutoPorId ");
         return lacamentoPorOId;
+    }
+
+    @Override
+    public List<Lacamento> buscaTodosLancamentos() {
+        log.info("[start] ProdutoInfraRepository - buscaTodosProdutos ");
+        var lacamentos = lacamentoSpringDataJPARepository.findAll();
+        log.info("[finish] ProdutoInfraRepository - buscaTodosProdutos ");
+        return lacamentos;
     }
 }
