@@ -1,5 +1,6 @@
 package com.lincros.apilancamentoitem.lancamento.application.service;
 
+import com.lincros.apilancamentoitem.lancamento.application.api.controller.requests.LacamentoAlteracaoRequest;
 import com.lincros.apilancamentoitem.lancamento.application.api.controller.requests.LacamentoRequest;
 import com.lincros.apilancamentoitem.lancamento.application.api.controller.responses.LacamentoDetalhadoListResponse;
 import com.lincros.apilancamentoitem.lancamento.application.api.controller.responses.LacamentoListResponse;
@@ -51,5 +52,14 @@ public class LacamentoApplicationService implements LacamentoService {
         Lacamento lacamento = lacamentoRepository.buscaLacamentoPorOId(oidLacamento);
         lacamentoRepository.deletaLacamento(lacamento);
         log.info("[finish] LacamentoApplicationService - deletaLacamentoPorOId");
+    }
+
+    @Override
+    public void alteraLacamento(UUID oidLacamento, LacamentoAlteracaoRequest lacamentoAlteracaoRequest) {
+        log.info("[start] ProdutoApplicationService - alteraLacamento");
+        Lacamento lacamento = lacamentoRepository.buscaLacamentoPorOId(oidLacamento);
+        lacamento.alteraLacamento(lacamentoAlteracaoRequest);
+        lacamentoRepository.salvaLacamento(lacamento);
+        log.info("[finish] ProdutoApplicationService - alteraLacamento");
     }
 }

@@ -1,5 +1,6 @@
 package com.lincros.apilancamentoitem.lancamento.application.service;
 
+import com.lincros.apilancamentoitem.lancamento.application.api.controller.requests.LacamentoAlteracaoRequest;
 import com.lincros.apilancamentoitem.lancamento.application.api.controller.requests.LacamentoRequest;
 import com.lincros.apilancamentoitem.lancamento.application.api.controller.responses.LacamentoDetalhadoListResponse;
 import com.lincros.apilancamentoitem.lancamento.application.api.controller.responses.LacamentoListResponse;
@@ -16,4 +17,6 @@ public interface LacamentoService {
     List<LacamentoListResponse> buscaTodosLancamentos();
 
     void deletaLacamentoPorOId(UUID oidLacamento);
+
+    void alteraLacamento(UUID oidLacamento, LacamentoAlteracaoRequest lacamentoAlteracaoRequest);
 }

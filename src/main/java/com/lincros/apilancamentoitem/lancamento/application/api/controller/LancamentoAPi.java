@@ -1,5 +1,6 @@
 package com.lincros.apilancamentoitem.lancamento.application.api.controller;
 
+import com.lincros.apilancamentoitem.lancamento.application.api.controller.requests.LacamentoAlteracaoRequest;
 import com.lincros.apilancamentoitem.lancamento.application.api.controller.requests.LacamentoRequest;
 import com.lincros.apilancamentoitem.lancamento.application.api.controller.responses.LacamentoDetalhadoListResponse;
 import com.lincros.apilancamentoitem.lancamento.application.api.controller.responses.LacamentoListResponse;
@@ -29,4 +30,9 @@ public interface LancamentoAPi {
     @DeleteMapping(value = "/{oidLacamento}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deletaLacamentoPorOId(@PathVariable UUID oidLacamento);
+
+    @PatchMapping(value = "/{oidLacamento}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void alteraLacamento(@PathVariable UUID oidLacamento,
+                       @Valid @RequestBody LacamentoAlteracaoRequest lacamentoAlteracaoRequest);
 }

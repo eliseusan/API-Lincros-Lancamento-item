@@ -1,6 +1,7 @@
 package com.lincros.apilancamentoitem.lancamento.domain.entities;
 
 
+import com.lincros.apilancamentoitem.lancamento.application.api.controller.requests.LacamentoAlteracaoRequest;
 import com.lincros.apilancamentoitem.lancamento.application.api.controller.requests.LacamentoRequest;
 import jakarta.persistence.*;
 import lombok.*;
@@ -44,6 +45,14 @@ public class Lacamento {
         this.dtFinal = lacamentoRequest.getDtFinal();
         this.vlTotal = lacamentoRequest.getVlTotal();
         this.observacao = lacamentoRequest.getObservacao();
+        this.dataHoraDoCadastro = LocalDateTime.now();
+    }
+
+    public void alteraLacamento(LacamentoAlteracaoRequest lacamentoAlteracaoRequest) {
+        this.dtInicial = lacamentoAlteracaoRequest.getDtInicial();
+        this.dtFinal = lacamentoAlteracaoRequest.getDtFinal();
+        this.vlTotal = lacamentoAlteracaoRequest.getVlTotal();
+        this.observacao = lacamentoAlteracaoRequest.getObservacao();
         this.dataHoraDoCadastro = LocalDateTime.now();
     }
 }
