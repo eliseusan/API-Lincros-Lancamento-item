@@ -53,6 +53,6 @@ public class Lacamento {
         this.dtFinal = lacamentoAlteracaoRequest.getDtFinal();
         this.vlTotal = lacamentoAlteracaoRequest.getVlTotal();
         this.observacao = lacamentoAlteracaoRequest.getObservacao();
-        this.dataHoraDoCadastro = LocalDateTime.now();
+        this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
     }
 }
